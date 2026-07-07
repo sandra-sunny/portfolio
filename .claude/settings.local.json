@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/sandra/Downloads/portfolio/.claude)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(ps -p 8779 -o pid,etime,command)",
+      "Bash(curl -s http://localhost:3000/_next/static/chunks/app_globals_0jn8.0u.css)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(pkill -f \"next-server\")"
+    ]
+  }
+}

@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --berry: #5B2C6F;
+  --berry-dark: #3D1A4F;
+  --berry-deep: #2A0E38;
+  --teal: #0D9488;
+  --teal-light: #14B8A6;
+  --gold: #F59E0B;
+  --charcoal: #1C1C2E;
+  --charcoal-mid: #252538;
+  --offwhite: #F8F6FF;
+  --muted: #6B7280;
+  --border: #E5E7EB;
+  --ink: #1C1C2E;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--offwhite);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+.nav-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.2s;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+}
+.nav-link:hover { color: white; }
+
+.chapter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+.chapter-label .chapter-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.5rem;
+  background: var(--ink);
+  color: var(--gold);
+  font-size: 0.7rem;
+}
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(13,148,136,0.1);
+  color: var(--teal);
+  border: 2px solid var(--teal);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease both; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* ── XP BAR ─────────────────────────────────────────────── */
+.xp-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(255,255,255,0.15);
+  z-index: 60;
+}
+.xp-fill {
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  background: var(--gold);
+}
+
+/* ── GAME BUTTONS (chunky arcade) ───────────────────────────── */
+.btn-game {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.9rem 1.75rem;
+  color: var(--ink);
+  background: var(--gold);
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.btn-game:hover { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--ink); }
+.btn-game:active { transform: translate(5px, 5px); box-shadow: 0 0 0 var(--ink); }
+
+.sticker {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.03em;
+  padding: 0.35rem 0.75rem;
+  text-transform: uppercase;
+}
+.sticker-teal { background: var(--teal-light); color: #04342C; border: 2px solid #04342C; transform: rotate(-2deg); }
+.sticker-gold { background: var(--gold); color: #412402; border: 2px solid #412402; transform: rotate(1.5deg); }
+.sticker-white { background: #FFFFFF; color: var(--berry-deep); border: 2px solid var(--berry-deep); transform: rotate(-1deg); }
+
+/* ── TICKER ─────────────────────────────────────────────────── */
+.ticker {
+  background: var(--ink);
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.55rem 0;
+}
+.ticker-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: tickerScroll 28s linear infinite;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── STORY PATH ─────────────────────────────────────────────── */
+.journey {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 1rem 0;
+}
+.journey-trail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 25px;
+  width: 6px;
+  background-image: radial-gradient(circle, var(--teal) 2.5px, transparent 3px);
+  background-size: 6px 16px;
+  background-repeat: repeat-y;
+  background-position: center top;
+}
+.journey-item {
+  position: relative;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+.journey-node {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: var(--gold);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.journey-node-highlight { background: var(--teal-light); }
+.journey-card {
+  background: white;
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 1.25rem 1.5rem;
+  max-width: 34rem;
+}
+.journey-card-highlight {
+  background: var(--ink);
+}
+.journey-card-highlight .journey-title { color: var(--gold); }
+.journey-card-highlight .journey-text { color: rgba(255,255,255,0.85); }
+.journey-location {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.35rem;
+}
+.journey-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.15rem;
+  color: var(--berry);
+  margin-bottom: 0.5rem;
+}
+.journey-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--charcoal);
+}
+.journey-checkpoint {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--ink);
+  color: var(--gold);
+  border: 3px solid var(--ink);
+  padding: 0.8rem 1.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  max-width: 36rem;
+  transform: rotate(-1deg);
+}
+.journey-item-side .journey-card {
+  background: #FDF3C7;
+  transform: rotate(1.2deg);
+  max-width: 26rem;
+}
+.journey-item-side .journey-node {
+  background: #FDF3C7;
+}
+
+@media (min-width: 768px) {
+  .journey-trail { left: 50%; margin-left: -3px; }
+  .journey-item {
+    width: 50%;
+    padding-right: 2.5rem;
+    flex-direction: row-reverse;
+    text-align: right;
+    margin-right: auto;
+  }
+  .journey-item .journey-node { margin-right: -30px; }
+  .journey-item-right {
+    margin-right: 0;
+    margin-left: auto;
+    padding-right: 0;
+    padding-left: 2.5rem;
+    flex-direction: row;
+    text-align: left;
+  }
+  .journey-item-right .journey-node { margin-right: 0; margin-left: -30px; }
+  .journey-checkpoint { align-self: center; }
+}
+
+/* ── ACHIEVEMENTS ───────────────────────────────────────────── */
+.achievement-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: #FFFFFF;
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 rgba(245,158,11,0.9);
+  padding: 1.5rem;
+}
+.achievement-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--berry);
+  color: var(--gold);
+  border: 2px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.achievement-stat {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.9rem;
+  color: var(--berry);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.achievement-label { color: var(--charcoal); font-weight: 700; margin: 0.35rem 0; }
+.achievement-detail { font-size: 0.875rem; line-height: 1.5; color: var(--muted); }
+
+.toast-stack {
+  position: fixed;
+  top: 4.5rem;
+  right: 1rem;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+.achievement-toast {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0.6rem 1rem;
+}
+
+/* ── STAT SHEET ─────────────────────────────────────────────── */
+.stat-sheet-card {
+  background: white;
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  padding: 1.25rem;
+}
+.stat-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--charcoal);
+  margin-bottom: 0.6rem;
+}
+.stat-sheet-level {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: var(--ink);
+  padding: 0.15rem 0.5rem;
+}
+.pip-row { display: flex; gap: 5px; margin-bottom: 0.9rem; }
+.pip {
+  width: 100%;
+  height: 14px;
+  border: 2px solid var(--ink);
+  background: #FFFFFF;
+}
+.pip.filled { background: var(--teal-light); }
+.stat-sheet-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.stat-sheet-list li {
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding-left: 0.9rem;
+  position: relative;
+}
+.stat-sheet-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--teal);
+  font-size: 0.7rem;
+}
+
+/* ── QUEST LOG ──────────────────────────────────────────────── */
+.quest-card {
+  background: white;
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  overflow: hidden;
+}
+.quest-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+.quest-header-left { display: flex; align-items: center; gap: 0.85rem; }
+.quest-number {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 0.95rem;
+  color: var(--gold);
+  background: var(--ink);
+  padding: 0.35rem 0.5rem;
+  flex-shrink: 0;
+}
+.quest-title { font-weight: 700; color: var(--charcoal); font-size: 0.95rem; }
+.quest-company { font-size: 0.8rem; color: var(--berry); font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+.quest-period { color: var(--muted); font-weight: 500; }
+.quest-header-right { display: flex; align-items: center; gap: 0.75rem; color: var(--muted); }
+.quest-difficulty {
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  background: var(--berry);
+  border: 2px solid var(--ink);
+  padding: 0.25rem 0.6rem;
+  white-space: nowrap;
+  transform: rotate(-1.5deg);
+}
+.quest-xp {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: var(--ink);
+  padding: 0.25rem 0.5rem;
+  white-space: nowrap;
+}
+.quest-body-wrap { overflow: hidden; }
+.quest-body { padding: 0 1.25rem 1.25rem; border-top: 3px solid var(--ink); padding-top: 1.1rem; }
+.quest-description { font-size: 0.9rem; line-height: 1.6; color: var(--muted); margin-bottom: 1rem; }
+.quest-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+.quest-outcome { font-size: 0.85rem; font-weight: 500; color: var(--charcoal); }
+.quest-outcome-check { color: var(--teal); font-weight: 700; margin-right: 0.25rem; }
+.quest-link { display: flex; align-items: center; gap: 0.25rem; font-size: 0.75rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--teal); text-transform: uppercase; }
+.quest-link:hover { text-decoration: underline; }
+
+/* ── SUNNYSTREAK (SousSunny feature-concept demo) ───────────── */
+.streak-card {
+  background: #FDF3C7;
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  transform: rotate(-0.5deg);
+}
+.streak-kicker {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--berry);
+  margin-bottom: 0.35rem;
+}
+.streak-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.streak-intro {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+  max-width: 32rem;
+}
+.streak-week {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 1.1rem;
+  flex-wrap: wrap;
+}
+.streak-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.streak-cell {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--ink);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+}
+.streak-cell.lit { background: var(--gold); }
+.streak-cell.today { box-shadow: 3px 3px 0 var(--ink); }
+.streak-sun { display: flex; }
+.streak-day-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.streak-count {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-left: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  background: var(--ink);
+  color: var(--gold);
+  font-size: 1.15rem;
+  font-weight: 700;
+  align-self: flex-start;
+}
+.streak-count-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.streak-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.streak-btn {
+  font-size: 0.75rem;
+  padding: 0.6rem 1.1rem;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.streak-btn:disabled {
+  background: #FFFFFF;
+  color: var(--teal);
+  cursor: default;
+  transform: none;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.streak-msg {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  flex: 1;
+  min-width: 12rem;
+}
+
+/* ── PATH CHOICES (ending) ───────────────────────────────────── */
+.path-choice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.1rem 1.5rem;
+  background: #FFFFFF;
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--gold);
+  color: var(--charcoal);
+  text-align: left;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.path-choice:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--gold);
+}
+.path-choice-label { font-family: 'Archivo Black', sans-serif; font-size: 1rem; text-transform: uppercase; }
+.path-choice-flavor { font-size: 0.75rem; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 0.15rem; }
