@@ -43,7 +43,8 @@ function lastSevenDays(): Date[] {
 
 function message(streak: number, todayLogged: boolean): string {
   if (streak === 0) return copy.msgZero;
-  if (streak === 1) return todayLogged ? copy.msgOne : copy.msgKeepAlive;
+  if (!todayLogged) return copy.msgKeepAlive;
+  if (streak === 1) return copy.msgOne;
   if (streak >= 7) return copy.msgWeek.replace("{n}", String(streak));
   return copy.msgBuilding.replace("{n}", String(streak));
 }

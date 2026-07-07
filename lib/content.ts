@@ -9,7 +9,7 @@ export const siteContent = {
   title: "Product Manager · Product Operations · AI & Health-Tech",
   location: "New York, NY",
   linkedin: "https://linkedin.com/in/sandra-liz-sunny",
-  github: "https://github.com/sandraliz601-png",
+  github: "https://github.com/sandra-sunny",
   email: "", // optional — leave blank to hide
 
   // ── BRAND STATEMENT ────────────────────────────────────────
@@ -96,9 +96,9 @@ export const siteContent = {
       buttonDone: "Logged for today ✓",
       countLabel: "day streak",
       msgZero: "No streak yet. The pan is cold.",
-      msgOne: "Day 1. Every streak starts with one slightly burnt meal.",
-      msgKeepAlive:
-        "Streak alive. Come back tomorrow to keep it going, or skip the wait and just message me.",
+      msgOne:
+        "Day 1. Every streak starts with one slightly burnt meal. Come back tomorrow to keep it alive, or skip ahead and message me today.",
+      msgKeepAlive: "Your streak is on the line. Log today to keep the sun up.",
       msgBuilding: "{n} days in a row. Look at you go.",
       msgWeek: "{n} days. A full week. Honestly, better than me.",
     },
