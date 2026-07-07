@@ -8,3 +8,4 @@ next-env.d.ts
 
 # Claude Code session tooling
 .claude/worktrees/
+.claude/worktrees/
