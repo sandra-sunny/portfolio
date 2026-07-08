@@ -59,13 +59,13 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-wrap gap-3 mt-6 fade-up delay-4">
-              {degrees.map((d, i) => (
-                <span key={d} className={`sticker ${i === 0 ? "sticker-gold" : "sticker-teal"}`}>{d}</span>
+            <div className="flex flex-col items-start gap-3 mt-6 fade-up delay-4">
+              {degrees.map((d) => (
+                <span key={d} className="sticker sticker-white">{d}</span>
               ))}
             </div>
             <div className="flex flex-wrap gap-3 mt-3 fade-up delay-5">
-              <span className="sticker sticker-white">ML Research @ Bloomberg</span>
+              <span className="sticker sticker-gold">ML Research @ Bloomberg</span>
               <span className="sticker sticker-teal">Outstanding Student Service Award &apos;25</span>
             </div>
             <div className="mt-12 fade-up delay-5">
