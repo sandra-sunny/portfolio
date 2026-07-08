@@ -14,8 +14,11 @@ export const siteContent = {
 
   // ── CREDENTIALS (hero stat strip) ──────────────────────────
   credentials: [
-    { stat: "5+", label: "Years experience", sub: "D.E. Shaw · AVOMD · Pavus" },
-    { stat: "2", label: "Degrees", sub: "Columbia · St. Stephen's" },
+    { stat: "5+", label: "Years experience", sub: "D.E. Shaw · AVOMD · Pavus AI" },
+  ],
+  degrees: [
+    "MS Business Analytics · Columbia University",
+    "BS Mathematics (Honors) · St. Stephen's College, Univ. of Delhi",
   ],
 
   // ── BRAND STATEMENT ────────────────────────────────────────
