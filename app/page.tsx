@@ -6,7 +6,7 @@ import { AchievementsGrid } from "@/components/AchievementsGrid";
 import { StatSheet } from "@/components/StatSheet";
 import { QuestLog } from "@/components/QuestLog";
 
-const { name, title, location, linkedin, github, email, headline, subheadline, credentials, wins, skills, projects, closing, game } = c;
+const { name, title, location, linkedin, github, email, headline, subheadline, credentials, degrees, wins, skills, projects, closing, game } = c;
 
 export default function Home() {
   return (
@@ -59,7 +59,12 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-wrap gap-3 mt-8 fade-up delay-5">
+            <div className="flex flex-wrap gap-3 mt-6 fade-up delay-4">
+              {degrees.map((d, i) => (
+                <span key={d} className={`sticker ${i === 0 ? "sticker-gold" : "sticker-teal"}`}>{d}</span>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-3 mt-3 fade-up delay-5">
               <span className="sticker sticker-white">ML Research @ Bloomberg</span>
               <span className="sticker sticker-teal">Outstanding Student Service Award &apos;25</span>
             </div>
