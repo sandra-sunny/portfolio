@@ -6,7 +6,7 @@
 export const siteContent = {
   // ── PERSONAL INFO ──────────────────────────────────────────
   name: "Sandra Sunny",
-  title: "Product Manager · Product Operations · AI & Health-Tech",
+  title: "Product Manager · AI, Health-Tech & Platform Ops",
   location: "New York, NY",
   linkedin: "https://linkedin.com/in/sandra-liz-sunny",
   github: "https://github.com/sandra-sunny",
@@ -22,7 +22,7 @@ export const siteContent = {
   ],
 
   // ── BRAND STATEMENT ────────────────────────────────────────
-  headline: "I close the gap between AI capability and real-world adoption.",
+  headline: "I turn AI that works in a demo into AI that works in the real world.",
   subheadline:
     "Translating complex systems into products that people actually use, with a focus on AI-driven healthcare and femtech.",
 

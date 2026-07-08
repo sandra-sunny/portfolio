@@ -135,9 +135,9 @@ h1, h2, h3, .display {
   padding: 0.35rem 0.75rem;
   text-transform: uppercase;
 }
-.sticker-teal { background: var(--teal-light); color: #04342C; border: 2px solid #04342C; transform: rotate(-2deg); }
-.sticker-gold { background: var(--gold); color: #412402; border: 2px solid #412402; transform: rotate(1.5deg); }
-.sticker-white { background: #FFFFFF; color: var(--berry-deep); border: 2px solid var(--berry-deep); transform: rotate(-1deg); }
+.sticker-teal { background: var(--teal-light); color: #04342C; border: 2px solid #04342C; }
+.sticker-gold { background: var(--gold); color: #412402; border: 2px solid #412402; }
+.sticker-white { background: #FFFFFF; color: var(--berry-deep); border: 2px solid var(--berry-deep); }
 
 /* ── TICKER ─────────────────────────────────────────────────── */
 .ticker {
