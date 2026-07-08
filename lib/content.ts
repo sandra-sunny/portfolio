@@ -42,7 +42,7 @@ export const siteContent = {
         location: "Dubai",
         title: "The mystery kid",
         icon: "Blocks",
-        text: "I grew up in Dubai on a steady diet of Lego, puzzles, and mystery novels. Nancy Drew, Hardy Boys, Famous Five, Secret Seven. If something had a secret, I wanted to crack it. Then Dan Brown's Digital Fortress showed me that people crack codes for a living.",
+        text: "I grew up in Dubai with my nose in mystery novels. Nancy Drew, Hardy Boys, Famous Five, Secret Seven. If something had a secret, I wanted to crack it. Then Dan Brown's Digital Fortress showed me that people crack codes for a living, and I was hooked.",
       },
       {
         kind: "milestone" as const,
@@ -72,9 +72,9 @@ export const siteContent = {
       {
         kind: "side" as const,
         location: "Side quest",
-        title: "SousSunny",
+        title: "Ms. SousSunny",
         icon: "ChefHat",
-        text: "I product-manage my own life too. I don't enjoy cooking, so I'm building SousSunny, my own sous chef that breaks meal planning into small, winnable goals. Going live soon.",
+        text: "I product-manage my own life too. I don't enjoy cooking, so I'm building Ms. SousSunny, my own sous chef that breaks meal planning into small, winnable goals. Going live soon.",
       },
       {
         kind: "milestone" as const,
@@ -85,13 +85,13 @@ export const siteContent = {
         text: "I'm looking for the next place to close the gap, where rigorous technical thinking meets real human adoption, and where equal access is the mission rather than a side project.",
       },
     ],
-    // SunnyStreak is a SousSunny brand concept, demoed live on the quest card.
+    // SunnyStreak is a Ms. SousSunny brand concept, demoed live on the quest card.
     // It is not a shipped feature, and the copy keeps that honest.
     sunnystreak: {
       kicker: "Bonus Level · Feature Concept",
       title: "SunnyStreak",
       intro:
-        "The habit streak I'm designing for SousSunny, playable right here. Log a cook, real or aspirational, and keep the sun up.",
+        "The habit streak I'm designing for Ms. SousSunny, playable right here. Log a cook, real or aspirational, and keep the sun up.",
       button: "Log today's cook ▸",
       buttonDone: "Logged for today ✓",
       countLabel: "day streak",
@@ -278,7 +278,7 @@ export const siteContent = {
     {
       id: "soussunny",
       number: "04",
-      title: "SousSunny",
+      title: "Ms. SousSunny",
       company: "Solo Build",
       tags: ["Consumer App", "0 to 1", "Side Project"],
       description:
@@ -327,7 +327,7 @@ export const siteContent = {
       "I've owned platforms at scale as Confluence Administrator and Product Owner, from version upgrades to SQL-level automation, with 400+ hires onboarded along the way.",
       "I've built AI evaluation tooling at Bloomberg before it was a category, so I know what breaks and why.",
       "I've worked inside clinical AI workflows, building the dashboards healthcare leadership used to cut decision-making time by 20%.",
-      "I ship. I'm building SousSunny, my meal-planning app, solo and end to end. It goes live soon.",
+      "I ship. I'm building Ms. SousSunny, my meal-planning app, solo and end to end. It goes live soon.",
       "I connect the dots between what AI teams build and what users will actually adopt.",
     ],
     cta: "Let's build products that humans actually use.",
