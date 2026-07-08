@@ -6,7 +6,7 @@ import { AchievementsGrid } from "@/components/AchievementsGrid";
 import { StatSheet } from "@/components/StatSheet";
 import { QuestLog } from "@/components/QuestLog";
 
-const { name, title, location, linkedin, github, email, headline, subheadline, wins, skills, projects, closing, game } = c;
+const { name, title, location, linkedin, github, email, headline, subheadline, credentials, wins, skills, projects, closing, game } = c;
 
 export default function Home() {
   return (
@@ -50,9 +50,16 @@ export default function Home() {
             <p className="text-white/60 text-base max-w-xl leading-relaxed fade-up delay-4">
               {subheadline}
             </p>
-            <div className="flex flex-wrap gap-3 mt-10 fade-up delay-5">
-              <span className="sticker sticker-teal">Columbia MSBA &apos;26</span>
-              <span className="sticker sticker-gold">4 Yrs @ D.E. Shaw</span>
+            <div className="cred-strip fade-up delay-4">
+              {credentials.map((cr) => (
+                <div key={cr.label} className="cred-block">
+                  <span className="cred-stat">{cr.stat}</span>
+                  <span className="cred-label">{cr.label}</span>
+                  {cr.sub && <span className="cred-sub">{cr.sub}</span>}
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-3 mt-8 fade-up delay-5">
               <span className="sticker sticker-white">ML Research @ Bloomberg</span>
               <span className="sticker sticker-teal">Outstanding Student Service Award &apos;25</span>
             </div>

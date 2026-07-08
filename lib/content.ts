@@ -12,6 +12,12 @@ export const siteContent = {
   github: "https://github.com/sandra-sunny",
   email: "", // optional — leave blank to hide
 
+  // ── CREDENTIALS (hero stat strip) ──────────────────────────
+  credentials: [
+    { stat: "5+", label: "Years experience", sub: "D.E. Shaw · AVOMD · Pavus" },
+    { stat: "2", label: "Degrees", sub: "Columbia · St. Stephen's" },
+  ],
+
   // ── BRAND STATEMENT ────────────────────────────────────────
   headline: "I close the gap between AI capability and real-world adoption.",
   subheadline:

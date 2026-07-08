@@ -164,6 +164,43 @@ h1, h2, h3, .display {
   to   { transform: translateX(-50%); }
 }
 
+/* ── CREDENTIALS STRIP (hero) ───────────────────────────────── */
+.cred-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2.5rem;
+}
+.cred-block {
+  display: flex;
+  flex-direction: column;
+  min-width: 8.5rem;
+  background: #FFFFFF;
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  padding: 0.85rem 1.1rem;
+}
+.cred-stat {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--berry);
+}
+.cred-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 0.4rem;
+}
+.cred-sub {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
 /* ── STORY PATH ─────────────────────────────────────────────── */
 .journey {
   position: relative;
