@@ -9,6 +9,20 @@
       "autoPort": true
     },
     {
+      "name": "soussunny-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "/Users/sandra/Projects/soussunny",
+        "--",
+        "-p",
+        "3002"
+      ],
+      "port": 3002
+    },
+    {
       "name": "sunnystreak-worktree-dev",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
