@@ -83,7 +83,7 @@ export const siteContent = {
         location: "Side quest",
         title: "Ms. SousSunny",
         icon: "ChefHat",
-        text: "I product-manage my own life too. I don't enjoy cooking, so I'm building Ms. SousSunny, my own sous chef that breaks meal planning into small, winnable goals. Going live soon.",
+        text: "I product-manage my own life too. I don't enjoy cooking, so I built Ms. SousSunny, my own sous-chef that breaks meal planning into small, winnable goals. It's live now.",
       },
       {
         kind: "milestone" as const,
@@ -94,13 +94,13 @@ export const siteContent = {
         text: "I'm looking for the next place to close the gap, where rigorous technical thinking meets real human adoption, and where equal access is the mission rather than a side project.",
       },
     ],
-    // SunnyStreak is a Ms. SousSunny brand concept, demoed live on the quest card.
-    // It is not a shipped feature, and the copy keeps that honest.
+    // SunnyStreak ships in the live Ms. SousSunny app (soussunny.vercel.app);
+    // this quest card runs a self-contained demo of the mechanic.
     sunnystreak: {
       kicker: "Bonus Level · Feature Concept",
       title: "SunnyStreak",
       intro:
-        "The habit streak I'm designing for Ms. SousSunny, playable right here. Log a cook, real or aspirational, and keep the sun up.",
+        "A habit streak from Ms. SousSunny, my meal-planning app that's live now. Play this demo: log a cook, real or aspirational, and keep the sun up.",
       button: "Log today's cook ▸",
       buttonDone: "Logged for today ✓",
       countLabel: "day streak",
@@ -292,8 +292,8 @@ export const siteContent = {
       tags: ["Consumer App", "0 to 1", "Side Project"],
       description:
         "I don't enjoy cooking, so I'm building my own sous chef: a daily meal planner that breaks cooking into small, winnable goals. Designed, built, and shipped solo, end to end. Yes, the name is a pun on my name. No regrets.",
-      outcome: "Going live soon",
-      link: "", // add the live URL at launch
+      outcome: "Live now, built and shipped solo",
+      link: "https://soussunny.vercel.app",
       difficulty: "Active Quest",
       xp: 350,
       demo: "sunnystreak",
@@ -336,7 +336,7 @@ export const siteContent = {
       "I've owned platforms at scale as Confluence Administrator and Product Owner, from version upgrades to SQL-level automation, with 400+ hires onboarded along the way.",
       "I've built AI evaluation tooling at Bloomberg before it was a category, so I know what breaks and why.",
       "I've worked inside clinical AI workflows, building the dashboards healthcare leadership used to cut decision-making time by 20%.",
-      "I ship. I'm building Ms. SousSunny, my meal-planning app, solo and end to end. It goes live soon.",
+      "I ship. I built and launched Ms. SousSunny, my meal-planning app, solo and end to end. It's live now.",
       "I connect the dots between what AI teams build and what users will actually adopt.",
     ],
     cta: "Let's build products that humans actually use.",
