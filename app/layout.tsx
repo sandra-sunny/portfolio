@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { TrackerInit } from "@/components/TrackerInit";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Sandra Sunny — Product Manager",
@@ -21,8 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <TrackerInit />
         {children}
+        <Analytics />
       </body>
     </html>
   );
