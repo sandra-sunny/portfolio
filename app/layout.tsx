@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { PostHogInit } from "@/components/PostHogInit";
 
 export const metadata: Metadata = {
   title: "Sandra Sunny — Product Manager",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body>
         {children}
         <Analytics />
+        <PostHogInit />
       </body>
     </html>
   );
